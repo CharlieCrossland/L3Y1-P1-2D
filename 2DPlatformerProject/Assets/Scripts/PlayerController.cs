@@ -21,6 +21,9 @@ public class PlayerController : MonoBehaviour
     public GameObject bullet;
     bool isFacingRight;
 
+    [Header("Animation")]
+    public Animator animator;
+
     [Header("Main")]
     public float moveSpeed;
     public float jumpForce;
@@ -51,6 +54,7 @@ public class PlayerController : MonoBehaviour
         Health();
         Shoot();
         MovementDirection();
+        PlayerAnimator();
     }
 
     void Movement()
@@ -103,6 +107,15 @@ public class PlayerController : MonoBehaviour
         isFacingRight = !isFacingRight;
         transform.Rotate(0f, 180f, 0f);
     } 
+
+    void PlayerAnimator()
+    {
+        animator.SetFloat("Speed", Mathf.Abs(inputs));
+        if (Input.GetKeyDown(KeyCode.X))
+        {  
+            animator.SetBool("IsRangedAttack", true);
+        }  
+    }
 
     private void OnTriggerEnter2D(Collider2D other) 
     {

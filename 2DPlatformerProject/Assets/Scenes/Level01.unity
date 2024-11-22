@@ -2148,6 +2148,10 @@ PrefabInstance:
       propertyPath: bullet
       value: 
       objectReference: {fileID: 7898192160231557463, guid: 6db55791a85c17a44872a3b466f662a2, type: 3}
+    - target: {fileID: 4603897728996690459, guid: 68b19763a6d338b40bf1740d3dda533c, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 671108383}
     - target: {fileID: 5856424296537256974, guid: 68b19763a6d338b40bf1740d3dda533c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.07
