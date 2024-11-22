@@ -6,6 +6,7 @@ using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class PlayerController : MonoBehaviour
 {
     [Header("UI")]
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Animation")]
     public Animator animator;
+    public bool IsRangedAttack;
 
     [Header("Main")]
     public float moveSpeed;
@@ -115,6 +117,7 @@ public class PlayerController : MonoBehaviour
         {  
             animator.SetBool("IsRangedAttack", true);
         }  
+        else animator.SetBool("IsRangedAttack", false);
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
