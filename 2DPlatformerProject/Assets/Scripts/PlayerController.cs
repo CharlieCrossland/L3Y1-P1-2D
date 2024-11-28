@@ -5,15 +5,17 @@ using Unity.VisualScripting;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
-public class PlayerController : MonoBehaviour
+public class JORGEPlayerController : MonoBehaviour
 {
     [Header("UI")]
     public TMP_Text timerTxt;
     public float timer;
 
     [Header("Health")]
+    public Slider healthSlider;
     public int maxHealth;
     public int currentHealth;
 
@@ -43,6 +45,9 @@ public class PlayerController : MonoBehaviour
     {
         currentHealth = maxHealth;
         startPos = transform.position;
+
+        healthSlider.maxValue = maxHealth;
+
         isFacingRight = true;
     }
 
@@ -78,6 +83,8 @@ public class PlayerController : MonoBehaviour
 
     void Health()
     {
+        healthSlider.value = currentHealth;
+
         if (currentHealth <= 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -113,11 +120,6 @@ public class PlayerController : MonoBehaviour
     void PlayerAnimator()
     {
         animator.SetFloat("Speed", Mathf.Abs(inputs));
-        if (Input.GetKeyDown(KeyCode.X))
-        {  
-            animator.SetBool("IsRangedAttack", true);
-        }  
-        else animator.SetBool("IsRangedAttack", false);
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
