@@ -64,6 +64,7 @@ public class JORGEPlayerController : MonoBehaviour
         Movement();
         Health();
         Shoot();
+        Melee();
         MovementDirection();
         PlayerAnimator();
     }
