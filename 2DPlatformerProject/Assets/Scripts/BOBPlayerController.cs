@@ -10,11 +10,6 @@ using UnityEngine.UI;
 
 public class BOBPlayerController : MonoBehaviour
 {
-    [Header("Health")]
-    public Slider healthSlider;
-    public int maxHealth;
-    public int currentHealth;
-
     [Header("Animation")]
     public Animator BOBanimator;
 
@@ -34,11 +29,7 @@ public class BOBPlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = maxHealth;
         BOBstartPos = transform.position;
-
-        healthSlider.maxValue = maxHealth;
-
         BOBisFacingRight = true;
     }
 
@@ -46,7 +37,6 @@ public class BOBPlayerController : MonoBehaviour
     void Update()
     {    
         BOBMovement();
-        BOBHealth();
         BOBMovementDirection();
         BOBFlip();
         BOBPlayerAnimator();
@@ -66,16 +56,6 @@ public class BOBPlayerController : MonoBehaviour
             {
                 BOBrb.AddForce(transform.up * BOBjumpForce, ForceMode2D.Impulse);
             }
-        }
-    }
-
-    void BOBHealth()
-    {
-        healthSlider.value = currentHealth;
-
-        if (currentHealth <= 0)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
@@ -99,7 +79,7 @@ public class BOBPlayerController : MonoBehaviour
 
     void BOBPlayerAnimator()
     {
-        BOBanimator.SetFloat("Speed", Mathf.Abs(BOBinputs));
+        BOBanimator.SetFloat("BOBSpeed", Mathf.Abs(BOBinputs));
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
@@ -114,7 +94,6 @@ public class BOBPlayerController : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Enemy"))
         {
-            currentHealth--;
             Destroy(other.gameObject);
         }
     }

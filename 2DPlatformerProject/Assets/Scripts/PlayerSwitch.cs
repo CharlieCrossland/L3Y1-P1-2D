@@ -35,7 +35,7 @@ public class PlayerSwitch : MonoBehaviour
 
     void SwitchBOBtoJORGE()
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.V))
         {
             JORGEPlayerContainer.SetActive(true);
             BOBPlayerContainer.SetActive(false);

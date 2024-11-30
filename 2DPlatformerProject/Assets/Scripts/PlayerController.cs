@@ -24,6 +24,10 @@ public class JORGEPlayerController : MonoBehaviour
     public GameObject bullet;
     bool isFacingRight;
 
+    [Header("Melee")]
+    public Transform meleePoint;
+    public GameObject tongue;
+
     [Header("Animation")]
     public Animator animator;
     public bool IsRangedAttack;
@@ -96,6 +100,14 @@ public class JORGEPlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.X))
         {
             Instantiate(bullet, shootingPoint.position, shootingPoint.rotation);
+        }
+    }
+
+    void Melee()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Instantiate(tongue, meleePoint.position, meleePoint.rotation);
         }
     }
 
