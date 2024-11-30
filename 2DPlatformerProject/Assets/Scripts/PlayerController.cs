@@ -150,5 +150,9 @@ public class JORGEPlayerController : MonoBehaviour
             currentHealth--;
             Destroy(other.gameObject);
         }
+        if (other.gameObject.CompareTag("Buttons"))
+        {
+            print("Open");
+        }
     }
 }
