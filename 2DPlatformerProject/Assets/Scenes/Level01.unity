@@ -413,11 +413,6 @@ Transform:
   - {fileID: 1295912089}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &407386514 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6243878079805219761, guid: 68b19763a6d338b40bf1740d3dda533c, type: 3}
-  m_PrefabInstance: {fileID: 1549826223}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &562608706
 GameObject:
   m_ObjectHideFlags: 0
@@ -4145,33 +4140,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2965071612438281029, guid: 68b19763a6d338b40bf1740d3dda533c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.83
-      objectReference: {fileID: 0}
-    - target: {fileID: 2965071612438281029, guid: 68b19763a6d338b40bf1740d3dda533c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.069
-      objectReference: {fileID: 0}
     - target: {fileID: 3818411107252674695, guid: 68b19763a6d338b40bf1740d3dda533c, type: 3}
       propertyPath: m_Name
       value: PlayerContainer
-      objectReference: {fileID: 0}
-    - target: {fileID: 4603897728996690459, guid: 68b19763a6d338b40bf1740d3dda533c, type: 3}
-      propertyPath: tongue
-      value: 
-      objectReference: {fileID: 4754427476697262314, guid: 0a723609f5c6a2646b8461314b9901f1, type: 3}
-    - target: {fileID: 4603897728996690459, guid: 68b19763a6d338b40bf1740d3dda533c, type: 3}
-      propertyPath: jumpForce
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4603897728996690459, guid: 68b19763a6d338b40bf1740d3dda533c, type: 3}
-      propertyPath: meleePoint
-      value: 
-      objectReference: {fileID: 407386514}
-    - target: {fileID: 4603897728996690459, guid: 68b19763a6d338b40bf1740d3dda533c, type: 3}
-      propertyPath: layerMask.m_Bits
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

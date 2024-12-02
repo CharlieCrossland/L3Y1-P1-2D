@@ -13,6 +13,7 @@ public class PlayerSwitch : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Disables Robot and enables Monster on level start
         JORGEPlayerContainer.SetActive(true);
         BOBPlayerContainer.SetActive(false);
     }
@@ -26,6 +27,7 @@ public class PlayerSwitch : MonoBehaviour
 
     void SwitchJORGEtoBOB()
     {
+        // Switches monster to robot
         if (Input.GetKeyDown(KeyCode.C))
         {
             JORGEPlayerContainer.SetActive(false);
@@ -35,6 +37,7 @@ public class PlayerSwitch : MonoBehaviour
 
     void SwitchBOBtoJORGE()
     {
+        // Placeholder input right now, I want it the same input as the other switch
         if (Input.GetKeyDown(KeyCode.V))
         {
             JORGEPlayerContainer.SetActive(true);

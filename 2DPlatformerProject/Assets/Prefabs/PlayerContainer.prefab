@@ -811,6 +811,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7898192160231557463, guid: 6db55791a85c17a44872a3b466f662a2, type: 3}
     - target: {fileID: 2368205110140500802, guid: c466b314c2ab3164fa0823385750267f, type: 3}
+      propertyPath: tongue
+      value: 
+      objectReference: {fileID: 4754427476697262314, guid: 0a723609f5c6a2646b8461314b9901f1, type: 3}
+    - target: {fileID: 2368205110140500802, guid: c466b314c2ab3164fa0823385750267f, type: 3}
       propertyPath: animator
       value: 
       objectReference: {fileID: 6877808308978419474}
@@ -820,12 +824,16 @@ PrefabInstance:
       objectReference: {fileID: 3835606249385247193}
     - target: {fileID: 2368205110140500802, guid: c466b314c2ab3164fa0823385750267f, type: 3}
       propertyPath: jumpForce
-      value: 11
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2368205110140500802, guid: c466b314c2ab3164fa0823385750267f, type: 3}
       propertyPath: moveSpeed
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2368205110140500802, guid: c466b314c2ab3164fa0823385750267f, type: 3}
+      propertyPath: meleePoint
+      value: 
+      objectReference: {fileID: 6243878079805219761}
     - target: {fileID: 2368205110140500802, guid: c466b314c2ab3164fa0823385750267f, type: 3}
       propertyPath: healthSlider
       value: 
@@ -864,7 +872,11 @@ PrefabInstance:
       objectReference: {fileID: 468075014, guid: df91e8b14972f304d9dd45b0403a22d7, type: 3}
     - target: {fileID: 3900071628626283036, guid: c466b314c2ab3164fa0823385750267f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.975
+      value: 0.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 3900071628626283036, guid: c466b314c2ab3164fa0823385750267f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.069
       objectReference: {fileID: 0}
     - target: {fileID: 5224201401940550583, guid: c466b314c2ab3164fa0823385750267f, type: 3}
       propertyPath: m_Name
