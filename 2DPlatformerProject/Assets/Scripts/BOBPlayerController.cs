@@ -10,6 +10,9 @@ using UnityEngine.UI;
 
 public class BOBPlayerController : MonoBehaviour
 {
+    [Header("Spawn")]
+
+    
     [Header("Animation")]
     public Animator BOBanimator;
 
@@ -38,7 +41,6 @@ public class BOBPlayerController : MonoBehaviour
     {    
         BOBMovement();
         BOBMovementDirection();
-        BOBFlip();
         BOBPlayerAnimator();
     }
 
