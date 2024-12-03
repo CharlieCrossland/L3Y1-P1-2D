@@ -27,6 +27,10 @@ public class Bullet : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
+        if (other.gameObject.CompareTag("Breakable"))
+        {
+            Destroy(other.gameObject);
+        }
     }
 
 }

@@ -2,10 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.VisualScripting;
+using UnityEngine.UI;
+using TMPro;
 
 
 public class PlayerSwitch : MonoBehaviour
 {
+    [Header("UI")]
+    public TMP_Text timerTxt;
+    public float timer;
+
+    [Header("Health")]
+    public Slider healthSlider;
+    public int maxHealth;
+    public int currentHealth;
+
+    [Header("Switch")]
     public GameObject JORGEPlayerContainer;
     public GameObject BOBPlayerContainer;
 
@@ -32,6 +44,20 @@ public class PlayerSwitch : MonoBehaviour
 
         JORGEPlayerContainer.SetActive(firstActive);
         BOBPlayerContainer.SetActive(!firstActive);
-    }
-}
 
+
+        if (BOBPlayerContainer.gameObject.activeSelf == true)
+        {
+            JORGEPlayerContainer.transform.GetChild(0).transform.position = BOBPlayerContainer.transform.GetChild(0).transform.position;
+        }
+
+        UI();
+    }
+
+    void UI()
+    {
+        timer += Time.deltaTime;
+        timerTxt.text = timer.ToString("F2");
+    }
+
+}

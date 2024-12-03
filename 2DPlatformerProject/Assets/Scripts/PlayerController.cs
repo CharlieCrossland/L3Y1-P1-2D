@@ -76,14 +76,6 @@ public class JORGEPlayerController : MonoBehaviour
 
         hit = Physics2D.Raycast(transform.position, -transform.up, groundDistance, layerMask);
         Debug.DrawRay(transform.position, -transform.up * groundDistance, Color.yellow);
-
-        if (hit.collider)
-        {
-            if (Input.GetButtonDown("Jump"))
-            {
-                rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
-            }
-        }
     }
 
     void Health()
@@ -139,6 +131,7 @@ public class JORGEPlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Hazard"))
         {
+            currentHealth--;
             transform.position = startPos;
         }
         if (other.gameObject.CompareTag("Exit"))
