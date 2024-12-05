@@ -31,6 +31,7 @@ public class JORGEPlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public float groundDistance;
     public LayerMask layerMask;
+    bool canClimb;
 
     RaycastHit2D hit;
 
@@ -52,6 +53,7 @@ public class JORGEPlayerController : MonoBehaviour
     {
         
         Movement();
+        Ladder();
         Health();
         Shoot();
         MovementDirection();
@@ -65,6 +67,17 @@ public class JORGEPlayerController : MonoBehaviour
 
         hit = Physics2D.Raycast(transform.position, -transform.up, groundDistance, layerMask);
         Debug.DrawRay(transform.position, -transform.up * groundDistance, Color.yellow);
+    }
+
+    void Ladder()
+    {
+        if (canClimb == true)
+        {
+            if (Input.GetKeyDown(KeyCode.V))
+            {
+                transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * moveSpeed);
+            }
+        }
     }
 
     void Health()
@@ -123,6 +136,10 @@ public class JORGEPlayerController : MonoBehaviour
         {
             currentHealth--;
             Destroy(other.gameObject);
+        }
+        if (other.gameObject.CompareTag("Ladder"))
+        {
+            canClimb = true;
         }
     }
 }

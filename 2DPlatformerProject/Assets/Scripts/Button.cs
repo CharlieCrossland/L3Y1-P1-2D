@@ -19,7 +19,7 @@ public class Button : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Jorge") || other.gameObject.CompareTag("Bob"))
+        if (other.gameObject.CompareTag("Jorge") || other.gameObject.CompareTag("Bob") || other.gameObject.CompareTag("Bullet"))
         {
             Door.SetActive(false);
         }

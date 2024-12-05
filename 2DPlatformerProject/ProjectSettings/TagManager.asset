@@ -11,6 +11,8 @@ TagManager:
   - Breakable
   - Bob
   - Jorge
+  - Ladder
+  - Bullet
   layers:
   - Default
   - TransparentFX
