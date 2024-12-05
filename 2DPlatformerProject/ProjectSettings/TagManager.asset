@@ -8,8 +8,9 @@ TagManager:
   - Hazard
   - Enemy
   - Buttons
-  - BOB
   - Breakable
+  - Bob
+  - Jorge
   layers:
   - Default
   - TransparentFX

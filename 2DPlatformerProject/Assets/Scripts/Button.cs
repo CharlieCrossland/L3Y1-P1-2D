@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Button : MonoBehaviour
 {
+    public GameObject Door;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,4 +16,19 @@ public class Button : MonoBehaviour
     {
         
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Jorge") || other.gameObject.CompareTag("Bob"))
+        {
+            Door.SetActive(false);
+        }
+        else
+        {
+            Door.SetActive(true);
+        }
+    }
+
+
+
 }

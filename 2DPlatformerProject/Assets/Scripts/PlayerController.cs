@@ -10,23 +10,15 @@ using UnityEngine.UI;
 
 public class JORGEPlayerController : MonoBehaviour
 {
-    [Header("UI")]
-    public TMP_Text timerTxt;
-    public float timer;
-
-    [Header("Health")]
-    public Slider healthSlider;
-    public int maxHealth;
-    public int currentHealth;
-
     [Header("Shooting")]
     public Transform shootingPoint;
     public GameObject bullet;
     bool isFacingRight;
 
-    [Header("Melee")]
-    public Transform meleePoint;
-    public GameObject tongue;
+    [Header("Health")]
+    public Slider healthSlider;
+    public int maxHealth;
+    public int currentHealth;
 
     [Header("Animation")]
     public Animator animator;
@@ -58,13 +50,10 @@ public class JORGEPlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-        timerTxt.text = timer.ToString("F2");
         
         Movement();
         Health();
         Shoot();
-        Melee();
         MovementDirection();
         PlayerAnimator();
     }
@@ -93,14 +82,6 @@ public class JORGEPlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.X))
         {
             Instantiate(bullet, shootingPoint.position, shootingPoint.rotation);
-        }
-    }
-
-    void Melee()
-    {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            Instantiate(tongue, meleePoint.position, meleePoint.rotation);
         }
     }
 
@@ -142,10 +123,6 @@ public class JORGEPlayerController : MonoBehaviour
         {
             currentHealth--;
             Destroy(other.gameObject);
-        }
-        if (other.gameObject.CompareTag("Buttons"))
-        {
-            print("Open");
         }
     }
 }
