@@ -549,8 +549,8 @@ Transform:
   m_GameObject: {fileID: 6068177682182624855}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.0208282, y: -1.6400887, z: 0.51}
-  m_LocalScale: {x: 2.54922, y: 2.634194, z: 0.84974}
+  m_LocalPosition: {x: 2.0208282, y: -1.7640887, z: 0.48559}
+  m_LocalScale: {x: 2.1595101, y: 2.2314937, z: 0.71983683}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 520623434861343015}
@@ -821,28 +821,36 @@ PrefabInstance:
       value: JORGEPlayerContainer
       objectReference: {fileID: 0}
     - target: {fileID: 4603897728996690459, guid: 68b19763a6d338b40bf1740d3dda533c, type: 3}
+      propertyPath: Bob
+      value: 
+      objectReference: {fileID: 306571259416700796}
+    - target: {fileID: 4603897728996690459, guid: 68b19763a6d338b40bf1740d3dda533c, type: 3}
       propertyPath: timerTxt
       value: 
       objectReference: {fileID: 2206671428316205241}
+    - target: {fileID: 4603897728996690459, guid: 68b19763a6d338b40bf1740d3dda533c, type: 3}
+      propertyPath: moveSpeed
+      value: 2.69
+      objectReference: {fileID: 0}
     - target: {fileID: 4603897728996690459, guid: 68b19763a6d338b40bf1740d3dda533c, type: 3}
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 6674317380092686322}
     - target: {fileID: 5856424296537256974, guid: 68b19763a6d338b40bf1740d3dda533c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.77903
+      value: 0.61377436
       objectReference: {fileID: 0}
     - target: {fileID: 5856424296537256974, guid: 68b19763a6d338b40bf1740d3dda533c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.77903
+      value: 0.61377436
       objectReference: {fileID: 0}
     - target: {fileID: 5856424296537256974, guid: 68b19763a6d338b40bf1740d3dda533c, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.77903
+      value: 0.61377436
       objectReference: {fileID: 0}
     - target: {fileID: 5856424296537256974, guid: 68b19763a6d338b40bf1740d3dda533c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.106
+      value: -2.184
       objectReference: {fileID: 0}
     - target: {fileID: 5881613077637451979, guid: 68b19763a6d338b40bf1740d3dda533c, type: 3}
       propertyPath: m_BackGroundColor.b
@@ -997,19 +1005,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8139935620015411017, guid: 85b0146d8c764bf4682fce5922303202, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.84974
+      value: 0.71983683
       objectReference: {fileID: 0}
     - target: {fileID: 8139935620015411017, guid: 85b0146d8c764bf4682fce5922303202, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.84974
+      value: 0.71983683
       objectReference: {fileID: 0}
     - target: {fileID: 8139935620015411017, guid: 85b0146d8c764bf4682fce5922303202, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.84974
+      value: 0.71983683
       objectReference: {fileID: 0}
     - target: {fileID: 8139935620015411017, guid: 85b0146d8c764bf4682fce5922303202, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.163
+      value: -0.287
+      objectReference: {fileID: 0}
+    - target: {fileID: 8139935620015411017, guid: 85b0146d8c764bf4682fce5922303202, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.024409
       objectReference: {fileID: 0}
     - target: {fileID: 8614424167761811956, guid: 85b0146d8c764bf4682fce5922303202, type: 3}
       propertyPath: m_Layer

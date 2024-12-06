@@ -19,6 +19,8 @@ public class JORGEPlayerController : MonoBehaviour
     public Slider healthSlider;
     public int maxHealth;
     public int currentHealth;
+    public GameObject Bob;
+    bool BobDead;
 
     [Header("Animation")]
     public Animator animator;
@@ -58,6 +60,7 @@ public class JORGEPlayerController : MonoBehaviour
         Shoot();
         MovementDirection();
         PlayerAnimator();
+        Reset();
     }
 
     void Movement()
@@ -67,6 +70,14 @@ public class JORGEPlayerController : MonoBehaviour
 
         hit = Physics2D.Raycast(transform.position, -transform.up, groundDistance, layerMask);
         Debug.DrawRay(transform.position, -transform.up * groundDistance, Color.yellow);
+    }
+
+    void Reset()
+    {
+        if (BobDead == true)
+        {
+            Bob.transform.GetChild(0).transform.position = startPos;
+        }
     }
 
     void Ladder()
@@ -127,6 +138,7 @@ public class JORGEPlayerController : MonoBehaviour
         {
             currentHealth--;
             transform.position = startPos;
+            BobDead = true;
         }
         if (other.gameObject.CompareTag("Exit"))
         {
@@ -135,6 +147,7 @@ public class JORGEPlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             currentHealth--;
+            BobDead = true;
             Destroy(other.gameObject);
         }
         if (other.gameObject.CompareTag("Ladder"))
