@@ -77,6 +77,7 @@ public class JORGEPlayerController : MonoBehaviour
         if (BobDead == true)
         {
             Bob.transform.GetChild(0).transform.position = startPos;
+            BobDead = false;
         }
     }
 

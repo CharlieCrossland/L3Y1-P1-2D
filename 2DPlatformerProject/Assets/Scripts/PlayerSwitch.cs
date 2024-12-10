@@ -17,9 +17,12 @@ public class PlayerSwitch : MonoBehaviour
     public GameObject BOBPlayerContainer;
     public GameObject BOBInactive;
 
+    [Header("Distance")]
+    public GameObject DistanceCol;
+
     bool firstActive;
-    bool JORGEdistance;
-    bool BOBdistance;
+    public bool JORGEdistance;
+    public bool BOBdistance;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +40,6 @@ public class PlayerSwitch : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C) && (JORGEdistance == true || BOBdistance == true))
         {
             firstActive = !firstActive;
-            JORGEdistance = false;
         }
 
         JORGEPlayerContainer.SetActive(firstActive);

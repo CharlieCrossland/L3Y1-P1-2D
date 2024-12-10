@@ -95,5 +95,17 @@ public class BOBPlayerController : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
+        // if (other.gameObject.CompareTag("Bob"))
+        // {
+        //     GameObject.Find("BothPlayerControllers").GetComponent<PlayerSwitch>().BOBdistance = true;
+        // }
     }
+
+    // private void OnTriggerExit2D(Collider2D other)
+    // {
+    //     if (other.gameObject.CompareTag("Bob"))
+    //     {
+    //         GameObject.Find("BothPlayerControllers").GetComponent<PlayerSwitch>().BOBdistance = false;
+    //     }
+    // }
 }
