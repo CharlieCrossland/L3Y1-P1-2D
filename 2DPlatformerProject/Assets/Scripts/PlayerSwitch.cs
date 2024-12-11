@@ -17,17 +17,17 @@ public class PlayerSwitch : MonoBehaviour
     public GameObject BOBPlayerContainer;
     public GameObject BOBInactive;
 
-    [Header("Distance")]
-    public GameObject DistanceCol;
-
     bool firstActive;
     public bool JORGEdistance;
     public bool BOBdistance;
+    public bool jorgeEnabled;
 
     // Start is called before the first frame update
     void Start()
     {
         firstActive = true;
+
+        BOBdistance = true;
 
         // Disables Robot and enables Monster on level start
         JORGEPlayerContainer.SetActive(true);
@@ -37,7 +37,7 @@ public class PlayerSwitch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C) && (JORGEdistance == true || BOBdistance == true))
+        if (Input.GetKeyDown(KeyCode.C) && (JORGEdistance == true && BOBdistance == true))
         {
             firstActive = !firstActive;
         }
@@ -48,11 +48,13 @@ public class PlayerSwitch : MonoBehaviour
 
         if (BOBPlayerContainer.gameObject.activeSelf == true)
         {
+            jorgeEnabled = false;
             JORGEPlayerContainer.transform.GetChild(0).transform.position = BOBPlayerContainer.transform.GetChild(0).transform.position;
         }
 
         if (JORGEPlayerContainer.gameObject.activeSelf == true)
         {
+            jorgeEnabled = true;
             BOBInactive.transform.position = BOBPlayerContainer.transform.GetChild(0).transform.position;
         }
  
@@ -64,28 +66,5 @@ public class PlayerSwitch : MonoBehaviour
         timer += Time.deltaTime;
         timerTxt.text = timer.ToString("F2");
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Jorge"))
-        {
-            JORGEdistance = true;
-        }
-        if (other.gameObject.CompareTag("Bob"))
-        {
-            BOBdistance = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Jorge"))
-        {
-            JORGEdistance = false;
-        }
-        if (other.gameObject.CompareTag("Bob"))
-        {
-            BOBdistance = true;
-        }    
-    }
+  
 }

@@ -19,7 +19,6 @@ public class JORGEPlayerController : MonoBehaviour
     public Slider healthSlider;
     public int maxHealth;
     public int currentHealth;
-    public GameObject Bob;
     bool BobDead;
 
     [Header("Animation")]
@@ -33,7 +32,12 @@ public class JORGEPlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public float groundDistance;
     public LayerMask layerMask;
-    bool canClimb;
+    public GameObject Bob;
+
+
+    [Header("Distance")]
+    bool jorgeDistance;
+    public PlayerSwitch switchScript;
 
     RaycastHit2D hit;
 
@@ -55,7 +59,7 @@ public class JORGEPlayerController : MonoBehaviour
     {
         
         Movement();
-        Ladder();
+        Distance();
         Health();
         Shoot();
         MovementDirection();
@@ -72,23 +76,24 @@ public class JORGEPlayerController : MonoBehaviour
         Debug.DrawRay(transform.position, -transform.up * groundDistance, Color.yellow);
     }
 
+    void Distance()
+    {
+        if (jorgeDistance)
+        {
+            switchScript.JORGEdistance = true;
+        }
+        else
+        {
+            switchScript.JORGEdistance = false;
+        }
+    }
+
     void Reset()
     {
         if (BobDead == true)
         {
             Bob.transform.GetChild(0).transform.position = startPos;
             BobDead = false;
-        }
-    }
-
-    void Ladder()
-    {
-        if (canClimb == true)
-        {
-            if (Input.GetKeyDown(KeyCode.V))
-            {
-                transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * moveSpeed);
-            }
         }
     }
 
@@ -151,9 +156,16 @@ public class JORGEPlayerController : MonoBehaviour
             BobDead = true;
             Destroy(other.gameObject);
         }
-        if (other.gameObject.CompareTag("Ladder"))
+        if (other.gameObject.CompareTag("BobIN"))
         {
-            canClimb = true;
+            jorgeDistance = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("BobIN"))
+        {
+            jorgeDistance = false;
         }
     }
 }
