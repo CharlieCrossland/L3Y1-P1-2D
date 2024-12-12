@@ -12,6 +12,10 @@ public class BOBPlayerController : MonoBehaviour
 {
     [Header("Animation")]
     public Animator BOBanimator;
+   
+    [Header("Health")]
+    public Slider healthSlider;
+    public JORGEPlayerController JorgeScript;
 
     [Header("Main")]
     public float BOBmoveSpeed;
@@ -37,6 +41,7 @@ public class BOBPlayerController : MonoBehaviour
     void Update()
     {    
         BOBMovement();
+        JorgeScript.Health();
         BOBMovementDirection();
         BOBPlayerAnimator();
     }
@@ -57,6 +62,17 @@ public class BOBPlayerController : MonoBehaviour
             }
         }
     }
+
+    // void Health()
+    // {
+    //     JorgeScript.healthSlider.value = JorgeScript.currentHealth;
+
+    //     if (JorgeScript.currentHealth <= 0)
+    //     {
+    //         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    //     }
+
+    // }
 
     void BOBMovementDirection()
     {
@@ -85,6 +101,7 @@ public class BOBPlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Hazard"))
         {
+            JorgeScript.currentHealth--;
             transform.position = BOBstartPos;
         }
         if (other.gameObject.CompareTag("Exit"))
@@ -93,19 +110,8 @@ public class BOBPlayerController : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Enemy"))
         {
+            JorgeScript.currentHealth--;
             Destroy(other.gameObject);
         }
-        // if (other.gameObject.CompareTag("Bob"))
-        // {
-        //     GameObject.Find("BothPlayerControllers").GetComponent<PlayerSwitch>().BOBdistance = true;
-        // }
     }
-
-    // private void OnTriggerExit2D(Collider2D other)
-    // {
-    //     if (other.gameObject.CompareTag("Bob"))
-    //     {
-    //         GameObject.Find("BothPlayerControllers").GetComponent<PlayerSwitch>().BOBdistance = false;
-    //     }
-    // }
 }

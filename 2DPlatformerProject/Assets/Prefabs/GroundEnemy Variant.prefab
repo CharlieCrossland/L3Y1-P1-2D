@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 544938481061475616, guid: d6913ff3aff5b5d428673a71e044e455, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.33
+      value: 2.377
       objectReference: {fileID: 0}
     - target: {fileID: 544938481061475616, guid: d6913ff3aff5b5d428673a71e044e455, type: 3}
       propertyPath: m_LocalPosition.y
@@ -63,6 +63,10 @@ PrefabInstance:
     - target: {fileID: 1705821951960798264, guid: d6913ff3aff5b5d428673a71e044e455, type: 3}
       propertyPath: m_Name
       value: GroundEnemy Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3146024258728599497, guid: d6913ff3aff5b5d428673a71e044e455, type: 3}
+      propertyPath: moveSpeed
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4852243940573986852, guid: d6913ff3aff5b5d428673a71e044e455, type: 3}
       propertyPath: m_Sprite

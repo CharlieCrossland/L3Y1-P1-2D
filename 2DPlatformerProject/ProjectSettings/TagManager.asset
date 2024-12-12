@@ -14,6 +14,7 @@ TagManager:
   - Ladder
   - Bullet
   - BobIN
+  - Health
   layers:
   - Default
   - TransparentFX

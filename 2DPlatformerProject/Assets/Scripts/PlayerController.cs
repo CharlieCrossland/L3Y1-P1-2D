@@ -97,7 +97,7 @@ public class JORGEPlayerController : MonoBehaviour
         }
     }
 
-    void Health()
+    public void Health()
     {
         healthSlider.value = currentHealth;
 
@@ -159,6 +159,11 @@ public class JORGEPlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("BobIN"))
         {
             jorgeDistance = true;
+        }
+        if (other.gameObject.CompareTag("Health"))
+        {
+            currentHealth++;
+            Destroy(other.gameObject);
         }
     }
     private void OnTriggerExit2D(Collider2D other)
