@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
-using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -65,12 +64,12 @@ public class BOBPlayerController : MonoBehaviour
 
     // void Health()
     // {
-    //     JorgeScript.healthSlider.value = JorgeScript.currentHealth;
+    //  JorgeScript.healthSlider.value = JorgeScript.currentHealth;
 
-    //     if (JorgeScript.currentHealth <= 0)
-    //     {
-    //         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    //     }
+    //  if (JorgeScript.currentHealth <= 0)
+    //  {
+    //      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    //  }
 
     // }
 
@@ -111,6 +110,11 @@ public class BOBPlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             JorgeScript.currentHealth--;
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.CompareTag("Health"))
+        {
+            JorgeScript.currentHealth++;
             Destroy(other.gameObject);
         }
     }
