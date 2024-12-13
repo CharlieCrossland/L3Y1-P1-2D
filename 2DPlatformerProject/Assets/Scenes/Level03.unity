@@ -45800,6 +45800,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlatformContainer (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3146024258728599497, guid: d6913ff3aff5b5d428673a71e044e455, type: 3}
+      propertyPath: moveSpeed
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -45820,7 +45824,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4744868743763990048, guid: 3f65950fe029aa2468538124a0dddfb2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.825
+      value: 16.195
       objectReference: {fileID: 0}
     - target: {fileID: 4744868743763990048, guid: 3f65950fe029aa2468538124a0dddfb2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -45865,6 +45869,10 @@ PrefabInstance:
     - target: {fileID: 8391943484284122757, guid: 3f65950fe029aa2468538124a0dddfb2, type: 3}
       propertyPath: m_Name
       value: ButtonMovePlatContainer Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8832966489778635947, guid: 3f65950fe029aa2468538124a0dddfb2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -11.975
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

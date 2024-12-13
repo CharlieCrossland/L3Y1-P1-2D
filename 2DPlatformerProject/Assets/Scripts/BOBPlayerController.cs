@@ -117,5 +117,10 @@ public class BOBPlayerController : MonoBehaviour
             JorgeScript.currentHealth++;
             Destroy(other.gameObject);
         }
+        if (other.gameObject.CompareTag("HealthTake"))
+        {
+            JorgeScript.currentHealth--;
+            Destroy(other.gameObject);
+        }
     }
 }

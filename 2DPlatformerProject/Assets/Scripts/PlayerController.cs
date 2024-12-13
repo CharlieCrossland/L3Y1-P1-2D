@@ -102,7 +102,7 @@ public class JORGEPlayerController : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene("MainMenu");
         }
     }
 
@@ -152,6 +152,7 @@ public class JORGEPlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             currentHealth--;
+            transform.position = startPos;
             BobDead = true;
             Destroy(other.gameObject);
         }
@@ -162,6 +163,11 @@ public class JORGEPlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Health"))
         {
             currentHealth++;
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.CompareTag("HealthTake"))
+        {
+            currentHealth--;
             Destroy(other.gameObject);
         }
     }
